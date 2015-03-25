@@ -44,11 +44,16 @@ var game = {
 		
 		// add our player entity in the entity pool
 		me.pool.register("mainPlayer", game.PlayerEntity);
+      // register our object entities in the object pool
+    me.pool.register("mainPlayer", game.PlayerEntity);
+    me.pool.register("CoinEntity", game.CoinEntity);
+    me.pool.register("EnemyEntity", game.EnemyEntity);
+
 
 		// enable the keyboard
 		me.input.bindKey(me.input.KEY.LEFT,		"left");
 		me.input.bindKey(me.input.KEY.RIGHT,	"right");
-		me.input.bindKey(me.input.KEY.U,		"jump", true);
+		me.input.bindKey(me.input.KEY.UP,		"jump", true);
 
         // Start the game.
         me.state.change(me.state.PLAY);
